@@ -4,6 +4,7 @@
 */
 :root {
     --main-font: IBM Plex Mono;
+    --main-bg-color: rgba(255, 241, 247, 1);
     --accent-color: rgba(255, 141, 203, 1);
     --secondary-accent-color: rgba(255, 0, 112, 1);
     --tablet-text-shadow: rgba(255, 141, 203, 1);

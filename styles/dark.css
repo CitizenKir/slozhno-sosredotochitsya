@@ -10,6 +10,7 @@
       чем стили в медиазапросе предпочтений пользователя
     */
     --accent-color: rgba(255, 0, 112, 1);
+    --main-bg-color: rgba(0, 24, 63, 1);
     --secondary-accent-color: var(--accent-color);
     --main-subtitles-color: var(--accent-color);
     --secondary-subtitles-color: rgba(0, 0, 40, 1);
@@ -23,6 +24,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --accent-color: rgba(255, 0, 112, 1);
+        --main-bg-color: rgba(0, 24, 63, 1);
         --secondary-accent-color: var(--accent-color);
         --main-subtitles-color: var(--accent-color);
         --secondary-subtitles-color: rgba(0, 0, 40, 1);
