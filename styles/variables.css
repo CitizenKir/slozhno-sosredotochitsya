@@ -5,12 +5,14 @@
 :root {
     --main-font: IBM Plex Mono;
     --main-bg-color: rgba(255, 241, 247, 1);
+    --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --accent-color: rgba(255, 141, 203, 1);
     --secondary-accent-color: rgba(255, 0, 112, 1);
     --tablet-text-shadow: rgba(255, 141, 203, 1);
     --main-text-color: rgba(53, 52, 48, 1);
     --main-title-color: rgba(255, 194, 230, 1);
     --main-subtitles-color: var(--main-text-color);
+    --hover-button-outline-color: rgba(50, 49, 45, 0.4);
     --secondary-subtitles-color: var(--main-subtitles-color);
     --rec-decoration: hidden;
     --background-image: url("../images/cover-image-light.png");
