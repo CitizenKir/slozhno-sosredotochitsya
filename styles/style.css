@@ -1,5 +1,491 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+    /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-image: var(--background-image);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--main-bg-color);
+    font-family: var(--main-font), sans-serif;
+    color: var(--main-text-color);
+    font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+    .page {
+        gap: 40px;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 0;
+    min-block-size: 768px;
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        min-block-size: 1024px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        min-block-size: 668px;
+        padding: 10px;
+    }
+}
+
+.decorated-zone {
+    position: relative;
+}
+
+.decorated-zone::before, .decorated-zone::after {
+    content: "";
+    position: absolute;
+    inline-size: 25px;
+    block-size: 25px;
+}
+
+.decorated-zone::before {
+    border-inline-end: 1px solid var(--main-subtitles-color);;
+    border-block-start: 1px solid var(--main-subtitles-color);;
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .decorated-zone::before {
+        inset-inline-end: 10px;
+        inset-block-start: 10px;
+    }
+}
+
+.decorated-zone::after {
+    border-inline-start: 1px solid var(--main-subtitles-color);
+    border-block-end: 1px solid var(--main-subtitles-color);
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .decorated-zone::after {
+        inset-inline-start: 10px;
+        inset-block-end: 10px;
+    }
+}
+
+.header__theme-menu {
+    display: flex;
+    align-self: center;
+    margin-block-end: 273px;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__theme-menu {
+        align-self: end;
+        margin-block-start: 173px;
+        margin-block-end: 182px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__theme-menu {
+        align-self: end;
+        margin-block-start: 65px;
+        margin-block-end: 69px;
+    }
+}
+
+.header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media screen and (max-width: 767px) {
+    .header__theme-menu-list {
+        gap: 13px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .header__theme-menu-list {
+        flex-direction: column;
+    }
+}
+
+.header__theme-menu-button {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 18px;
+    text-decoration: none;
+    background: transparent;
+    text-transform: lowercase;
+    color: var(--main-subtitles-color);
+    border: none;
+    cursor: pointer;
+    padding: 1.5px 13px;
+}
+
+.header__theme-menu-button:hover {
+    outline: 1px solid var(--main-subtitles-color);
+}
+
+.header__theme-menu-button:focus {
+    outline: none;
+    border: none;
+}
+
+.header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--main-subtitles-color);
+}
+
+.header__theme-menu-button_active {
+    outline: 1px solid var(--main-subtitles-color);
+    pointer-events: none;
+}
+
+.rec-decoration {
+    display: flex;
+    visibility: var(--rec-decoration);
+    position: absolute;
+    align-self: end;
+    line-height: 25px;
+    color: var(--main-subtitles-color);
+}
+
+.rec-decoration::after {
+    content: "";
+    align-self: center;
+    display: block;
+    inline-size: 9px;
+    block-size: 9px;
+    border-radius: 100%;
+    margin: 10px;
+    background-color: var(--main-subtitles-color);
+    box-shadow: 0px 0px 4px 2px var(--main-subtitles-color);
+}
+
+.header__title {
+    font-family: inherit;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-weight: 700;
+    line-height: 129.53px;
+    color: var(--main-title-color);
+    margin-block-end: 114px;
+    --accent-color: rgba(255, 0, 112, 1);
+    text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+@media screen and (max-width: 1023px) {
+    .header__title {
+        margin-block-end: 160px;
+        text-shadow: 4px 4px 0px var(--tablet-text-shadow);
+        line-height: 99px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__title {
+        margin-block-end: 55px;
+        line-height: 95.7px;
+    }
+}
+
+.title-decor {
+    background-color: var(--accent-color);
+}
+
+.header__description {
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23.4px;
+    color: var(--secondary-subtitles-color);
+    max-inline-size: 491px;
+    align-self: end;
+    margin-block-end: 114px;
+}
+
+@media screen and (max-width: 1023px) {
+    .header__description {
+        max-inline-size: 364px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__description {
+        max-inline-size: 100%;
+        margin-block-end: 40px;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 82px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        gap: 50px;
+        padding: 0 10px;
+    }
+}
+
+p > a {
+    text-decoration: none;
+    text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+p > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+p > a:focus-visible {
+    outline: 1px solid var(--main-text-color);
+}
+
+.section-why {
+    display: flex;
+    flex-direction: row;
+    font-family: inherit;
+    gap: 20px
+}
+
+@media screen and (max-width: 767px) {
+    .section-why {
+        flex-direction: column;
+    }
+}
+
+.question-why {
+    min-inline-size: 315px;
+}
+
+@media screen and (max-width: 1023px) {
+    .question-why {
+        min-inline-size: 0;
+        max-inline-size: 236px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .question-why {
+        min-inline-size: 100%;
+    }
+}
+
+.section__title-question {
+    color: var(--main-subtitles-color);
+    font-size: inherit;
+}
+
+@media screen and (max-width: 1023px) {
+    .section__title-question {
+        max-inline-size: 236px;
+    }
+}
+
+.section-why__wrapper {
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    gap: 20px;
+}
+
+.section__content-article {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    inline-size: 100%
+}
+
+@media screen and (max-width: 767px) {
+    .section__content-article {
+        gap: 9px;
+    }
+}
+
+.article__title {
+    color: var(--secondary-subtitles-color);
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.article__description {
+    font-size: inherit;
+    line-height: 23.4px;
+}
+
+.section-what {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-what {
+    max-inline-size: 315px;
+}
+
+@media screen and (max-width: 1023px) {
+    .question-what {
+        max-inline-size: 236px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .question-what {
+        max-inline-size: 100%;
+    }
+}
+
+.section-what__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+    .section-what__wrapper {
+        flex-direction: column;
+    }
+}
+
+.section-how {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .section-how {
+        min-inline-size: 236px;
+        flex-direction: column;
+    }
+}
+
+.question-how {
+    min-inline-size: 315px;
+}
+
+@media screen and (max-width: 1023px) {
+    .question-how {
+        min-inline-size: 236px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .question-how {
+        min-inline-size: 100%;
+    }
+}
+
+.section-how__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article__title-how {
+    font-weight: normal;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.section-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .section-images {
+        gap: 10px;
+    }
+}
+
+.question-images {
+    max-inline-size: 100%;
+}
+
+.section-images__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .section-images__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.section-images__image {
+    display: flex;
+    object-fit: cover;
+    inline-size: 100%;
+    block-size: 100%;
+    object-position: center;
+}
+
+.sunset-image {
+    grid-column-start: span 2;
+}
+
+.icecream-image {
+    grid-row-start: span 2;
+}
+
+.tape-image {
+    grid-row-start: span 2;
+}
+
+.street-image {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 768px;
+}
+
+@media screen and (max-width: 1023px) {
+    .footer {
+        min-block-size: 1024px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer {
+        min-block-size: 668px;
+    }
+}
+
+.footer__title {
+    font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
+    color: var(--main-title-color);
+    --accent-color: var(--secondary-accent-color);
+    text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media screen and (max-width: 1023px) {
+    .footer__title {
+        text-shadow: 2px 2px 0px var(--tablet-text-shadow);
+    }
 }

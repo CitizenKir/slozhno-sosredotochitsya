@@ -4,9 +4,37 @@
   переключая тему
 */
 
+
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+    --main-font: IBM Plex Mono;
+    --main-bg-color: rgba(255, 241, 247, 1);
+    --accent-color: rgba(255, 141, 203, 1);
+    --secondary-accent-color: rgba(255, 0, 112, 1);
+    --main-text-color: rgba(53, 52, 48, 1);
+    --main-title-color: rgba(255, 194, 230, 1);
+    --tablet-text-shadow: rgba(255, 141, 203, 1);
+    --main-subtitles-color: var(--main-text-color);
+    --secondary-subtitles-color: var(--main-subtitles-color);
+    --rec-decoration: hidden;
+    --background-image: url("../images/cover-image-light.png");
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --main-font: IBM Plex Mono;
+        --main-bg-color: rgba(255, 241, 247, 1);
+        --accent-color: rgba(255, 141, 203, 1);
+        --secondary-accent-color: rgba(255, 0, 112, 1);
+        --main-text-color: rgba(53, 52, 48, 1);
+        --main-title-color: rgba(255, 194, 230, 1);
+        --tablet-text-shadow: rgba(255, 141, 203, 1);
+        --main-subtitles-color: var(--main-text-color);
+        --secondary-subtitles-color: var(--main-subtitles-color);
+        --rec-decoration: hidden;
+        --background-image: url("../images/cover-image-light.png");
+    }
 }
