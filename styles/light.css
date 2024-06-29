@@ -18,6 +18,7 @@
     --main-title-color: rgba(255, 194, 230, 1);
     --tablet-text-shadow: rgba(255, 141, 203, 1);
     --main-subtitles-color: var(--main-text-color);
+    --hover-button-outline-color: rgba(50, 49, 45, 0.4);
     --secondary-subtitles-color: var(--main-subtitles-color);
     --rec-decoration: hidden;
     --background-image: url("../images/cover-image-light.png");
@@ -33,6 +34,7 @@
         --main-title-color: rgba(255, 194, 230, 1);
         --tablet-text-shadow: rgba(255, 141, 203, 1);
         --main-subtitles-color: var(--main-text-color);
+        --hover-button-outline-color: rgba(50, 49, 45, 0.4);
         --secondary-subtitles-color: var(--main-subtitles-color);
         --rec-decoration: hidden;
         --background-image: url("../images/cover-image-light.png");
