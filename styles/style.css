@@ -26,7 +26,8 @@
     display: grid;
     grid-template-rows: 1fr min-content 1fr;
     padding: 20px 20px 20px 0;
-    min-block-size: 100vh;
+    block-size: 100vh;
+    min-block-size: 668px;
 }
 
 @media screen and (max-width: 767px) {
@@ -454,7 +455,8 @@ p > a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-block-size: 100vh;
+    block-size: 100vh;
+    min-block-size: 668px;
 }
 
 .footer__title {
